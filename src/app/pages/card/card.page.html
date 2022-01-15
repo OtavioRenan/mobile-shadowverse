@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cartas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let card of listCards">
+    <div *ngIf=" card.card_name != null && card.trib_name != '-' ">
+      <ion-card-header>
+        <ion-card-subtitle>{{ card.tribe_name }}</ion-card-subtitle>
+        <ion-card-title>{{ card.card_name }}</ion-card-title>
+      </ion-card-header>
+      <ion-img [src]=" 'assets/images/cards/C_' + card.card_id + '.png' "></ion-img>
+      <ion-card-content>
+        {{ card.description }}
+      </ion-card-content>
+    </div>
+  </ion-card>
+
+</ion-content>
